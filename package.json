@@ -1,0 +1,11 @@
+{
+  "name": "shoppe",
+  "version": "1.0.0",
+  "description": "A simple shared shopping list",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "@vercel/kv": "^2.0.0"
+  }
+}

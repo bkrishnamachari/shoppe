@@ -1,0 +1,269 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f9f7f4;
+  --bg-subtle: #f3f0eb;
+  --text: #3d3a36;
+  --text-light: #8a857d;
+  --text-muted: #b8b3aa;
+  --border: #e5e1db;
+  --border-light: #eeebe6;
+  --accent: #9a8f82;
+  --shadow: rgba(61, 58, 54, 0.06);
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 6rem;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+}
+
+/* Add Form */
+.add-form {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+#item-input {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: white;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+#item-input::placeholder {
+  color: var(--text-muted);
+}
+
+#item-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--shadow);
+}
+
+.add-btn {
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 12px;
+  background: var(--text);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-btn:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
+.add-btn:active {
+  transform: translateY(0);
+}
+
+/* Items List */
+.items-list {
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item.checked {
+  opacity: 0.45;
+}
+
+.item.checked .item-text {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+/* Custom Checkbox */
+.checkbox-wrapper {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.checkbox-wrapper input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  margin: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  background: white;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.checkbox-wrapper input:hover + .checkmark {
+  border-color: var(--accent);
+}
+
+.checkbox-wrapper input:checked + .checkmark {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.checkmark::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 11px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.checkbox-wrapper input:checked + .checkmark::after {
+  opacity: 1;
+}
+
+.item-text {
+  flex: 1;
+  font-size: 1rem;
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.empty-state.hidden {
+  display: none;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.clear-btn {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
+  font-family: inherit;
+  color: var(--text-light);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-btn:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--bg-subtle);
+}
+
+.clear-all:hover {
+  color: #a67c6a;
+  border-color: #d4a595;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 500px) {
+  .container {
+    padding: 2rem 1rem 5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  #item-input {
+    padding: 0.9rem 1rem;
+  }
+
+  .add-btn {
+    width: 48px;
+    height: 48px;
+  }
+}

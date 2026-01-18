@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoppe</title>
+
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Theme color for browser/status bar -->
+  <meta name="theme-color" content="#f9f7f4">
+
+  <!-- iOS specific -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Shoppe">
+  <link rel="apple-touch-icon" href="/icon-180.png">
+
+  <!-- Fonts and styles -->
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Shoppe</h1>
+      <p class="subtitle">a shared list</p>
+    </header>
+
+    <form id="add-form" class="add-form">
+      <input
+        type="text"
+        id="item-input"
+        placeholder="add something..."
+        autocomplete="off"
+        autofocus
+      >
+      <button type="submit" class="add-btn" aria-label="Add item">+</button>
+    </form>
+
+    <ul id="items-list" class="items-list">
+      <!-- Items will be rendered here -->
+    </ul>
+
+    <div id="empty-state" class="empty-state">
+      <p>nothing here yet</p>
+    </div>
+
+    <footer>
+      <button id="refresh-btn" class="clear-btn refresh-btn">
+        refresh
+      </button>
+      <button id="clear-checked-btn" class="clear-btn" style="display: none;">
+        clear checked
+      </button>
+      <button id="clear-all-btn" class="clear-btn clear-all" style="display: none;">
+        clear all
+      </button>
+    </footer>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
