@@ -41,15 +41,7 @@
       <button type="submit" class="add-btn" aria-label="Add item">+</button>
     </form>
 
-    <ul id="items-list" class="items-list">
-      <!-- Items will be rendered here -->
-    </ul>
-
-    <div id="empty-state" class="empty-state">
-      <p>nothing here yet</p>
-    </div>
-
-    <footer>
+    <div class="actions">
       <button id="refresh-btn" class="clear-btn refresh-btn">
         refresh
       </button>
@@ -59,7 +51,15 @@
       <button id="clear-all-btn" class="clear-btn clear-all" style="display: none;">
         clear all
       </button>
-    </footer>
+    </div>
+
+    <ul id="items-list" class="items-list">
+      <!-- Items will be rendered here -->
+    </ul>
+
+    <div id="empty-state" class="empty-state">
+      <p>nothing here yet</p>
+    </div>
   </div>
 
   <script src="/app.js"></script>
